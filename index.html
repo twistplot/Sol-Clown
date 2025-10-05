@@ -78,39 +78,6 @@
         .btn-outline { background: transparent; color: var(--light); border: 2px solid var(--glass-border); backdrop-filter: blur(10px); }
         .btn-outline:hover { background: var(--glass); border-color: var(--secondary); transform: translateY(-3px); }
 
-        /* Features */
-        .section-title { text-align: center; margin-bottom: 4rem; font-size: 2.5rem; color: var(--light); }
-        .section-title span { color: var(--secondary); }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .feature-card { background: var(--glass); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--glass-border); transition: all 0.3s; position: relative; overflow: hidden; }
-        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(124, 58, 237, 0.2); }
-        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; }
-        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--secondary); }
-
-        /* Tokenomics */
-        .tokenomics-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .token-card { background: var(--glass); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid var(--glass-border); text-align: center; transition: transform 0.3s; }
-        .token-card:hover { transform: translateY(-5px); }
-        .token-value { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin: 1rem 0; }
-
-        /* Roadmap */
-        .roadmap-container { max-width: 1000px; margin: 0 auto; position: relative; }
-        .roadmap-container::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--secondary)); border-radius: 2px; }
-        .roadmap-item { width: calc(50% - 40px); padding: 2rem; background: var(--glass); backdrop-filter: blur(10px); border-radius: 15px; margin-bottom: 3rem; position: relative; border: 1px solid var(--glass-border); }
-        .roadmap-item:nth-child(odd) { left: 0; }
-        .roadmap-item:nth-child(even) { left: calc(50% + 40px); }
-        .roadmap-item::before { content: ''; position: absolute; top: 2rem; width: 20px; height: 20px; border-radius: 50%; background: var(--secondary); box-shadow: 0 0 0 5px var(--darker), 0 0 10px var(--secondary); }
-        .roadmap-item:nth-child(odd)::before { right: -50px; }
-        .roadmap-item:nth-child(even)::before { left: -50px; }
-        .roadmap-phase { color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-
-        /* Community */
-        .community-container { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
-        .social-link { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--glass); backdrop-filter: blur(10px); border-radius: 12px; text-decoration: none; color: var(--light); border: 1px solid var(--glass-border); transition: all 0.3s; }
-        .social-link:hover { background: rgba(124, 58, 237, 0.1); border-color: var(--primary); transform: translateY(-5px); }
-
         /* Footer */
         footer { background: rgba(5, 5, 16, 0.9); padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--glass-border); }
         .footer-logo { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 2rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1.5rem; }
@@ -119,26 +86,16 @@
         /* Responsive */
         @media (max-width: 968px) {
             .hero h1 { font-size: 3rem; }
-            .roadmap-container::before { left: 30px; }
-            .roadmap-item { width: calc(100% - 80px); left: 80px !important; }
-            .roadmap-item:nth-child(odd)::before,
-            .roadmap-item:nth-child(even)::before { left: -50px; }
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .nav-links { display: none; }
-            .btn-container { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation"></div>
     <div class="particles" id="particles"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="logo">SOL CLOWN</div>
         <div class="nav-links">
@@ -150,7 +107,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>THE FUTURE OF MEMECOINS IS HERE</h1>
@@ -159,103 +115,25 @@
                 <img src="A_digital_painting_features_a_clown_with_elements_.png" alt="Futuristic Sol Clown mascot">
             </div>
             <div class="btn-container">
-                <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary" target="_blank" rel="noopener">Buy on Pump.fun</a>
-                <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-secondary" target="_blank" rel="noopener">Live Chart</a>
+                <a href="https://pump.fun/coin/BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump" class="btn btn-primary" target="_blank" rel="noopener">Buy on Pump.fun</a>
+                <a href="https://dexscreener.com/solana/BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump" class="btn btn-secondary" target="_blank" rel="noopener">Live Chart</a>
                 <a href="#community" class="btn btn-outline">Join Community</a>
             </div>
             <div style="margin-top:1.2rem">
-                <code id="ca">YOUR_TOKEN_ADDRESS_HERE</code>
+                <code id="ca">BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump</code>
                 <button id="copyCA" class="btn btn-outline" style="margin-left:.75rem">Copy</button>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section id="features">
-        <h2 class="section-title">Why <span>$CLOWN</span>?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Lightning Fast</h3>
-                <p>Built on Solana for instant transactions and low fees. Experience blockchain at the speed of light.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🪙</div>
-                <h3>Transparent Launch</h3>
-                <p>Bonding‑curve launch on Pump.fun and clear allocations. No taxes, no nonsense — just memes.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎪</div>
-                <h3>Community Driven</h3>
-                <p>A vibrant circus of degens and memelords driving the hype. The community is at the heart of everything we do.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3>Mini‑Game Ideas</h3>
-                <p>Simple on‑chain games and meme contests funded by a community treasury to keep the show rolling.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics -->
-    <section id="tokenomics">
-        <h2 class="section-title">Token <span>Economics</span></h2>
-        <div class="tokenomics-container">
-            <div class="token-card">
-                <h3>Total Supply</h3>
-                <div class="token-value">1,000,000,000</div>
-                <p>One billion $CLOWN for broad community access and meme propagation.</p>
-            </div>
-            <div class="token-card">
-                <h3>Distribution</h3>
-                <div class="token-value">Pump.fun</div>
-                <p>Fair bonding‑curve distribution. After migration, trade where liquidity appears.</p>
-            </div>
-            <div class="token-card">
-                <h3>Taxes</h3>
-                <div class="token-value">0%</div>
-                <p>Trade freely. No buy or sell taxes — just pure clown energy.</p>
-            </div>
-            <div class="token-card">
-                <h3>Treasury</h3>
-                <div class="token-value">Community</div>
-                <p>Contests, creator bounties, and playful initiatives decided by holders.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap -->
-    <section id="roadmap">
-        <h2 class="section-title">The <span>Roadmap</span></h2>
-        <div class="roadmap-container">
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Act I — Launch</div>
-                <p>Pump.fun debut, social channels live, meme kit release, first Spaces.</p>
-            </div>
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Act II — Community</div>
-                <p>Weekly contests, Telegram raids, creator spotlight, first mini‑game concept.</p>
-            </div>
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Act III — Expansion</div>
-                <p>Collaborations, treasury proposals, merch drops, leaderboard fun.</p>
-            </div>
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Finale — Big Top</div>
-                <p>Livestream party with meme awards and community challenges. To the moon (with honks).</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community -->
     <section id="community">
         <div class="community-container">
             <h2 class="section-title">Join the <span>Circus</span></h2>
-            <p>Don’t miss the funniest ride on Solana. The clown car is filling up fast! Connect with us below.</p>
+            <p>Don’t miss the funniest ride on Solana. Connect with us below!</p>
             <div class="social-links">
                 <a href="https://t.me/+A4BV31nuxZ4wN2I8" class="social-link" target="_blank" rel="noopener">📢 Telegram</a>
-                <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="social-link" target="_blank" rel="noopener">📊 DexScreener</a>
-                <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="social-link" target="_blank" rel="noopener">💸 Pump.fun</a>
+                <a href="https://dexscreener.com/solana/BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump" class="social-link" target="_blank" rel="noopener">📊 DexScreener</a>
+                <a href="https://pump.fun/coin/BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump" class="social-link" target="_blank" rel="noopener">💸 Pump.fun</a>
             </div>
         </div>
     </section>
@@ -264,17 +142,13 @@
         <div class="footer-logo">SOL CLOWN</div>
         <p>Built on Solana • Memes only • Laugh responsibly</p>
         <div class="btn-container">
-            <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary" target="_blank" rel="noopener">Buy $CLOWN Now</a>
+            <a href="https://pump.fun/coin/BLSncYRH2jTjb4Mi7cDFmBANYLiLyde8uD2h7T8ipump" class="btn btn-primary" target="_blank" rel="noopener">Buy $CLOWN Now</a>
         </div>
         <p class="copyright">© <span id="yr"></span> Sol Clown</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
-      // Year
       document.getElementById('yr').textContent = new Date().getFullYear();
-
-      // Particles
       (function () {
         const wrap = document.getElementById('particles');
         const N = 40;
@@ -289,13 +163,10 @@
           wrap.appendChild(p);
         }
       })();
-
-      // Copy contract address
       document.getElementById('copyCA')?.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(document.getElementById('ca').textContent.trim());
-          const b = document.getElementById('copyCA'); const t = b.textContent; b.textContent = 'Copied!';
-          setTimeout(()=> b.textContent = t, 1200);
+          const b = document.getElementById('copyCA'); const t = b.textContent; b.textContent = 'Copied!'; setTimeout(()=> b.textContent = t, 1200);
         } catch {}
       });
     </script>
