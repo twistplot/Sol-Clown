@@ -1,175 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sol Clown | $CLOWN — The Futuristic Memecoin on Solana</title>
-  <meta name="description" content="Sol Clown ($CLOWN) — a next-generation memecoin on Solana blending cutting-edge web design with on-chain circus antics. Launching on Pump.fun." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%91%BB%3C/text%3E%3C/svg%3E" />
-  <meta property="og:title" content="Sol Clown | $CLOWN" />
-  <meta property="og:description" content="Experience the future of memecoins: laugh, juggle, and honk your way through Solana with $CLOWN." />
-  <meta name="theme-color" content="#7C3AED" />
-  <style>
-    /* Base Styles & Animated Gradient Background */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(-45deg, #0b0b14, #1a1a2e, #16213e, #0f3460);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      color: #f5f6ff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol Clown | $CLOWN — The Funniest Coin on Solana</title>
+    <meta name="description" content="Sol Clown ($CLOWN) — a high‑energy memecoin on Solana built for laughs, community, and on‑chain circus antics. Launching on Pump.fun.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%91%BB%3C/text%3E%3C/svg%3E">
+    <meta property="og:title" content="Sol Clown | $CLOWN">
+    <meta property="og:description" content="Join the on-chain circus: laugh, juggle, and honk your way through Solana with $CLOWN.">
+    <meta name="theme-color" content="#7C3AED">
+    <style>
+        /* Base Styles & Animated Background */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0b0b14, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #f5f6ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    /* Glassmorphism Container :cite[4] */
-    .hero {
-      max-width: 900px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 3rem 2rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
+        /* Glassmorphism Container */
+        .hero, .section {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-      z-index: -1;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
 
-    /* Typography with Neon Glow */
-    h1 {
-      font-size: 3.2rem;
-      background: linear-gradient(90deg, #7C3AED, #22d3ee, #7C3AED);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 3s linear infinite;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
-    }
+        /* Typography with Neon Glow */
+        h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(90deg, #7C3AED, #22d3ee, #7C3AED);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        }
 
-    @keyframes shimmer {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
+        h2 {
+            font-size: 2.2rem;
+            color: #7C3AED;
+            margin-bottom: 1.5rem;
+        }
 
-    .lead {
-      color: #d1d1e9;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
 
-    /* Futuristic Image Styling */
-    img.hero-img {
-      max-width: 85%;
-      border-radius: 20px;
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 60px rgba(34, 211, 238, 0.2);
-      margin: 30px 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
+        .lead {
+            color: #d1d1e9;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
 
-    img.hero-img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(124, 58, 237, 0.3);
-    }
+        /* Futuristic Image Styling */
+        img.hero-img {
+            max-width: 85%;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 60px rgba(34, 211, 238, 0.2);
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
 
-    /* Holographic Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 12px;
-      padding: 14px 32px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
+        img.hero-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(124, 58, 237, 0.3);
+        }
 
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
+        /* Holographic Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px;
+            padding: 14px 32px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-      background: rgba(255, 255, 255, 0.15);
-    }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
 
-    .btn:hover::before {
-      left: 100%;
-    }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
 
-    .btn-primary {
-      background: linear-gradient(90deg, #7C3AED, #5B21B6);
-      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
-    }
+        .btn:hover::before {
+            left: 100%;
+        }
 
-    .btn-secondary {
-      background: linear-gradient(90deg, #22d3ee, #0e7490);
-      box-shadow: 0 8px 32px rgba(34, 211, 238, 0.3);
-    }
+        .btn-primary {
+            background: linear-gradient(90deg, #7C3AED, #5B21B6);
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
+        }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      .lead { font-size: 1.1rem; }
-      .hero { padding: 2rem 1.5rem; }
-      img.hero-img { max-width: 95%; }
-    }
-  </style>
+        .btn-secondary {
+            background: linear-gradient(90deg, #22d3ee, #0e7490);
+            box-shadow: 0 8px 32px rgba(34, 211, 238, 0.3);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #7C3AED;
+            margin-top: 0;
+        }
+
+        /* Tokenomics Section */
+        .tokenomics-list {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .tokenomics-list li {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            .lead { font-size: 1.1rem; }
+            .hero, .section { padding: 2rem 1.5rem; }
+            img.hero-img { max-width: 95%; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Sol Clown — The Future of Memecoins 🤡</h1>
-    <p class="lead">Step into the next-generation circus on Solana. $CLOWN combines cutting-edge web design with pure memecoin energy. Join the revolution on Pump.fun!</p>
-    <img src="A_digital_painting_features_a_clown_with_elements_.png" alt="Futuristic Sol Clown mascot" class="hero-img"/>
-    <div>
-      <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary">Buy on Pump.fun</a>
-      <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-secondary">Live Chart</a>
+    <div class="hero">
+        <h1>Sol Clown — The Future of Memecoins 🤡</h1>
+        <p class="lead">Step into the next-generation circus on Solana. $CLOWN combines cutting-edge web design with pure memecoin energy. Join the revolution on Pump.fun!</p>
+        <img src="A_digital_painting_features_a_clown_with_elements_.png" alt="Futuristic Sol Clown mascot" class="hero-img"/>
+        <div>
+            <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary">Buy on Pump.fun</a>
+            <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-secondary">Live Chart</a>
+            <a href="https://t.me/YOUR_TELEGRAM_LINK" class="btn">Join Telegram</a>
+        </div>
     </div>
-  </div>
+
+    <div class="section">
+        <h2>Why $CLOWN?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🚀 Instant Deployment</h3>
+                <p>Lightning-fast token creation and deployment on Solana through Pump.fun.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎪 Community First</h3>
+                <p>A vibrant, growing circus of degens and memelords driving the hype.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔐 Secure & Safe</h3>
+                <p>Built on secure smart contracts with transparent tokenomics.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Meme Power</h3>
+                <p>Harnessing the unstoppable power of memes and community-driven growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Tokenomics</h2>
+        <ul class="tokenomics-list">
+            <li><strong>Total Supply:</strong> 1,000,000,000 $CLOWN</li>
+            <li><strong>Liquidity:</strong> 100% locked on Pump.fun</li>
+            <li><strong>Tax:</strong> 0% - Pure degens only</li>
+            <li><strong>Contract:</strong> Renounced for maximum trust</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Join the Circus</h2>
+        <p class="lead">Don't miss the funniest ride on Solana. The clown car is filling up fast!</p>
+        <div>
+            <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary">Buy $CLOWN Now</a>
+            <a href="https://t.me/YOUR_TELEGRAM_LINK" class="btn btn-secondary">Telegram</a>
+            <a href="https://twitter.com/YOUR_TWITTER_LINK" class="btn">Twitter</a>
+        </div>
+    </div>
 </body>
 </html>
