@@ -8,10 +8,14 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%91%BB%3C/text%3E%3C/svg%3E">
     <meta property="og:title" content="Sol Clown | $CLOWN">
     <meta property="og:description" content="Experience the future of memecoins: laugh, juggle, and honk your way through Solana with $CLOWN.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="A_digital_painting_features_a_clown_with_elements_.png">
     <meta name="theme-color" content="#7C3AED">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #7C3AED;
@@ -23,535 +27,105 @@
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: var(--darker);
-            color: var(--light);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        :target { scroll-margin-top: 90px; }
+        body { font-family: 'Exo 2', sans-serif; background-color: var(--darker); color: var(--light); overflow-x: hidden; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
         /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(-45deg, var(--dark), #1a1a2e, #16213e, #0f3460);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.3;
-            animation: float 15s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); }
-            33% { transform: translateY(-30vh) translateX(20vw) rotate(120deg); }
-            66% { transform: translateY(20vh) translateX(-20vw) rotate(240deg); }
-            100% { transform: translateY(0) translateX(0) rotate(360deg); }
-        }
-        
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: linear-gradient(-45deg, var(--dark), #1a1a2e, #16213e, #0f3460); background-size: 400% 400%; animation: gradientShift 15s ease infinite; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .particle { position: absolute; border-radius: 50%; background: var(--primary); opacity: 0.3; animation: float 15s infinite linear; }
+        @keyframes float { 0% { transform: translateY(0) translateX(0) rotate(0deg);} 33% { transform: translateY(-30vh) translateX(20vw) rotate(120deg);} 66% { transform: translateY(20vh) translateX(-20vw) rotate(240deg);} 100% { transform: translateY(0) translateX(0) rotate(360deg);} }
+
         /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(11, 11, 20, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-        }
-        
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 1.8rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: shimmer 3s linear infinite;
-            text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            color: #d1d1e9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-image {
-            width: 80%;
-            max-width: 600px;
-            margin: 2rem auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(34, 211, 238, 0.3);
-            position: relative;
-            transform-style: preserve-3d;
-            transform: perspective(1000px) rotateX(5deg);
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-        
-        .hero-image:hover {
-            transform: perspective(1000px) rotateX(0deg) scale(1.02);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 120px rgba(124, 58, 237, 0.4);
-        }
-        
-        .hero-image img {
-            width: 100%;
-            display: block;
-            border-radius: 20px;
-        }
-        
-        /* Buttons */
-        .btn-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            z-index: 1;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-            z-index: -1;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary), #5B21B6);
-            color: white;
-            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(90deg, var(--secondary), #0e7490);
-            color: white;
-            box-shadow: 0 8px 32px rgba(34, 211, 238, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(34, 211, 238, 0.5);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid var(--glass-border);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-outline:hover {
-            background: var(--glass);
-            border-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
+        nav { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(11, 11, 20, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); }
+        .logo { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 20px rgba(124, 58, 237, 0.5); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--light); text-decoration: none; font-weight: 600; position: relative; padding: 0.5rem 0; transition: color 0.3s; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--secondary); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+        .nav-links a:hover::after { width: 100%; }
+
         /* Sections */
-        section {
-            padding: 6rem 2rem;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            color: var(--light);
-        }
-        
-        .section-title span {
-            color: var(--secondary);
-        }
-        
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .feature-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(124, 58, 237, 0.2);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-        
-        /* Tokenomics Section */
-        .tokenomics-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .token-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid var(--glass-border);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .token-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .token-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 1rem 0;
-        }
-        
-        /* Roadmap Section */
-        .roadmap-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .roadmap-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-        
-        .roadmap-item {
-            width: calc(50% - 40px);
-            padding: 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            position: relative;
-            border: 1px solid var(--glass-border);
-        }
-        
-        .roadmap-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .roadmap-item:nth-child(even) {
-            left: calc(50% + 40px);
-        }
-        
-        .roadmap-item::before {
-            content: '';
-            position: absolute;
-            top: 2rem;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--secondary);
-            box-shadow: 0 0 0 5px var(--darker), 0 0 10px var(--secondary);
-        }
-        
-        .roadmap-item:nth-child(odd)::before {
-            right: -50px;
-        }
-        
-        .roadmap-item:nth-child(even)::before {
-            left: -50px;
-        }
-        
-        .roadmap-phase {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Community Section */
-        .community-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--light);
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background: rgba(124, 58, 237, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-        
+        section { padding: 6rem 2rem; position: relative; }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero-content { max-width: 900px; z-index: 2; margin-top: 80px; }
+        .hero h1 { font-size: 4rem; margin-bottom: 1.5rem; background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 3s linear infinite; text-shadow: 0 0 30px rgba(124, 58, 237, 0.5); }
+        @keyframes shimmer { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .hero p { font-size: 1.4rem; margin-bottom: 2.5rem; color: #d1d1e9; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero-image { width: 80%; max-width: 600px; margin: 2rem auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(34, 211, 238, 0.3); position: relative; transform-style: preserve-3d; transform: perspective(1000px) rotateX(5deg); transition: transform 0.5s, box-shadow 0.5s; }
+        .hero-image:hover { transform: perspective(1000px) rotateX(0deg) scale(1.02); box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 120px rgba(124, 58, 237, 0.4); }
+        .hero-image img { width: 100%; display: block; border-radius: 20px; }
+
+        /* Buttons */
+        .btn-container { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border-radius: 12px; font-weight: 600; text-decoration: none; font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden; transition: all 0.3s; border: none; cursor: pointer; z-index: 1; }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); transition: left 0.5s; z-index: -1; }
+        .btn:hover::before { left: 100%; }
+        .btn-primary { background: linear-gradient(90deg, var(--primary), #5B21B6); color: white; box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5); }
+        .btn-secondary { background: linear-gradient(90deg, var(--secondary), #0e7490); color: white; box-shadow: 0 8px 32px rgba(34, 211, 238, 0.3); }
+        .btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(34, 211, 238, 0.5); }
+        .btn-outline { background: transparent; color: var(--light); border: 2px solid var(--glass-border); backdrop-filter: blur(10px); }
+        .btn-outline:hover { background: var(--glass); border-color: var(--secondary); transform: translateY(-3px); }
+
+        /* Features */
+        .section-title { text-align: center; margin-bottom: 4rem; font-size: 2.5rem; color: var(--light); }
+        .section-title span { color: var(--secondary); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--glass); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--glass-border); transition: all 0.3s; position: relative; overflow: hidden; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(124, 58, 237, 0.2); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--secondary); }
+
+        /* Tokenomics */
+        .tokenomics-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .token-card { background: var(--glass); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid var(--glass-border); text-align: center; transition: transform 0.3s; }
+        .token-card:hover { transform: translateY(-5px); }
+        .token-value { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin: 1rem 0; }
+
+        /* Roadmap */
+        .roadmap-container { max-width: 1000px; margin: 0 auto; position: relative; }
+        .roadmap-container::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--secondary)); border-radius: 2px; }
+        .roadmap-item { width: calc(50% - 40px); padding: 2rem; background: var(--glass); backdrop-filter: blur(10px); border-radius: 15px; margin-bottom: 3rem; position: relative; border: 1px solid var(--glass-border); }
+        .roadmap-item:nth-child(odd) { left: 0; }
+        .roadmap-item:nth-child(even) { left: calc(50% + 40px); }
+        .roadmap-item::before { content: ''; position: absolute; top: 2rem; width: 20px; height: 20px; border-radius: 50%; background: var(--secondary); box-shadow: 0 0 0 5px var(--darker), 0 0 10px var(--secondary); }
+        .roadmap-item:nth-child(odd)::before { right: -50px; }
+        .roadmap-item:nth-child(even)::before { left: -50px; }
+        .roadmap-phase { color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+
+        /* Community */
+        .community-container { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--glass); backdrop-filter: blur(10px); border-radius: 12px; text-decoration: none; color: var(--light); border: 1px solid var(--glass-border); transition: all 0.3s; }
+        .social-link:hover { background: rgba(124, 58, 237, 0.1); border-color: var(--primary); transform: translateY(-5px); }
+
         /* Footer */
-        footer {
-            background: rgba(5, 5, 16, 0.9);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-        }
-        
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 2rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
-        }
-        
-        .copyright {
-            color: #a7a7c7;
-            margin-top: 2rem;
-        }
-        
-        /* Responsive Design */
+        footer { background: rgba(5, 5, 16, 0.9); padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--glass-border); }
+        .footer-logo { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 2rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1.5rem; }
+        .copyright { color: #a7a7c7; margin-top: 2rem; }
+
+        /* Responsive */
         @media (max-width: 968px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .roadmap-container::before {
-                left: 30px;
-            }
-            
-            .roadmap-item {
-                width: calc(100% - 80px);
-                left: 80px !important;
-            }
-            
+            .hero h1 { font-size: 3rem; }
+            .roadmap-container::before { left: 30px; }
+            .roadmap-item { width: calc(100% - 80px); left: 80px !important; }
             .roadmap-item:nth-child(odd)::before,
-            .roadmap-item:nth-child(even)::before {
-                left: -50px;
-            }
+            .roadmap-item:nth-child(even)::before { left: -50px; }
         }
-        
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .btn-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .nav-links { display: none; }
+            .btn-container { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -559,7 +133,7 @@
     <!-- Animated Background -->
     <div class="bg-animation"></div>
     <div class="particles" id="particles"></div>
-    
+
     <!-- Navigation -->
     <nav>
         <div class="logo">SOL CLOWN</div>
@@ -571,220 +145,157 @@
             <a href="#community">Community</a>
         </div>
     </nav>
-    
-    <!-- Hero Section -->
+
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>THE FUTURE OF MEMECOINS IS HERE</h1>
             <p>Step into the next-generation circus on Solana. $CLOWN combines cutting-edge blockchain technology with pure memecoin energy. Join the revolution on Pump.fun!</p>
-            
             <div class="hero-image">
                 <img src="A_digital_painting_features_a_clown_with_elements_.png" alt="Futuristic Sol Clown mascot">
             </div>
-            
             <div class="btn-container">
-                <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary">Buy on Pump.fun</a>
-                <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-secondary">Live Chart</a>
+                <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary" target="_blank" rel="noopener">Buy on Pump.fun</a>
+                <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-secondary" target="_blank" rel="noopener">Live Chart</a>
                 <a href="#community" class="btn btn-outline">Join Community</a>
+            </div>
+            <div style="margin-top:1.5rem">
+                <code id="ca">YOUR_TOKEN_ADDRESS_HERE</code>
+                <button id="copyCA" class="btn btn-outline" style="margin-left:.75rem">Copy</button>
             </div>
         </div>
     </section>
-    
-    <!-- Features Section -->
+
+    <!-- Features -->
     <section id="features">
         <h2 class="section-title">Why <span>$CLOWN</span>?</h2>
-        
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🚀</div>
                 <h3>Lightning Fast</h3>
-                <p>Built on Solana for instant transactions and near-zero fees. Experience blockchain at the speed of light.</p>
+                <p>Built on Solana for instant transactions and low fees. Experience blockchain at the speed of light.</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">🔐</div>
-                <h3>Secure & Safe</h3>
-                <p>Fully audited smart contracts with transparent tokenomics. Your investment is protected by cutting-edge security.</p>
+                <div class="feature-icon">🪙</div>
+                <h3>Transparent Launch</h3>
+                <p>Bonding-curve launch on Pump.fun and clear token allocations. No taxes, no nonsense — just memes.</p>
             </div>
-            
             <div class="feature-card">
                 <div class="feature-icon">🎪</div>
                 <h3>Community Driven</h3>
-                <p>A vibrant, growing circus of degens and memelords driving the hype. The community is at the heart of everything we do.</p>
+                <p>A vibrant circus of degens and memelords driving the hype. The community is at the heart of everything we do.</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Massive Potential</h3>
-                <p>Harnessing the unstoppable power of memes and community-driven growth. Early entry into the next big thing on Solana.</p>
+                <div class="feature-icon">🎮</div>
+                <h3>Mini-Game Ideas</h3>
+                <p>Simple on‑chain games and meme contests funded by a community treasury to keep the show rolling.</p>
             </div>
         </div>
     </section>
-    
-    <!-- Tokenomics Section -->
+
+    <!-- Tokenomics -->
     <section id="tokenomics">
         <h2 class="section-title">Token <span>Economics</span></h2>
-        
         <div class="tokenomics-container">
             <div class="token-card">
                 <h3>Total Supply</h3>
-                <div class="token-value">1B</div>
-                <p>1,000,000,000 $CLOWN tokens created for maximum accessibility and growth potential.</p>
+                <div class="token-value">1,000,000,000</div>
+                <p>One billion $CLOWN for broad community access and meme propagation.</p>
             </div>
-            
             <div class="token-card">
-                <h3>Liquidity</h3>
-                <div class="token-value">100%</div>
-                <p>All liquidity locked on Pump.fun to ensure a stable and secure trading environment.</p>
+                <h3>Launch</h3>
+                <div class="token-value">Pump.fun</div>
+                <p>Fair bonding‑curve distribution. After migration, trade where liquidity appears.</p>
             </div>
-            
             <div class="token-card">
-                <h3>Tax</h3>
+                <h3>Taxes</h3>
                 <div class="token-value">0%</div>
-                <p>Zero tax on all transactions. Trade freely without worrying about hidden fees.</p>
+                <p>Trade freely. No buy or sell taxes — just pure clown energy.</p>
             </div>
-            
             <div class="token-card">
-                <h3>Contract</h3>
-                <div class="token-value">Renounced</div>
-                <p>Contract ownership renounced for maximum decentralization and trust in the project.</p>
+                <h3>Treasury</h3>
+                <div class="token-value">Community</div>
+                <p>Contests, creator bounties, and playful initiatives decided by holders.</p>
             </div>
         </div>
     </section>
-    
-    <!-- Roadmap Section -->
+
+    <!-- Roadmap -->
     <section id="roadmap">
-        <h2 class="section-title">Project <span>Roadmap</span></h2>
-        
+        <h2 class="section-title">The <span>Roadmap</span></h2>
         <div class="roadmap-container">
             <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 1 - Launch</div>
-                <h3>Q1 2024</h3>
-                <p>Token creation and deployment on Pump.fun. Initial marketing push and community building. First 1,000 holders milestone.</p>
+                <div class="roadmap-phase">Act I — Launch</div>
+                <p>Pump.fun debut, social channels live, meme kit release, first Spaces.</p>
             </div>
-            
             <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 2 - Growth</div>
-                <h3>Q2 2024</h3>
-                <p>Listings on major Solana DEXs. Strategic partnerships and influencer collaborations. Community contests and airdrops.</p>
+                <div class="roadmap-phase">Act II — Community</div>
+                <p>Weekly contests, Telegram raids, creator spotlight, first mini‑game concept.</p>
             </div>
-            
             <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 3 - Expansion</div>
-                <h3>Q3 2024</h3>
-                <p>NFT collection launch featuring unique Sol Clown characters. CEX listings exploration. Merchandise store opening.</p>
+                <div class="roadmap-phase">Act III — Expansion</div>
+                <p>Collaborations, treasury proposals, merch drops, leaderboard fun.</p>
             </div>
-            
             <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 4 - Domination</div>
-                <h3>Q4 2024</h3>
-                <p>Major exchange listings. Global marketing campaigns. $CLOWN becomes a household name in the memecoin space.</p>
+                <div class="roadmap-phase">Finale — Big Top</div>
+                <p>Livestream party with meme awards and community challenges. To the moon (with honks).</p>
             </div>
         </div>
     </section>
-    
-    <!-- Community Section -->
+
+    <!-- Community -->
     <section id="community">
-        <h2 class="section-title">Join The <span>Circus</span></h2>
-        
         <div class="community-container">
-            <p>Don't miss the funniest ride on Solana. The clown car is filling up fast! Connect with us on all platforms to stay updated.</p>
-            
+            <h2 class="section-title">Join the <span>Circus</span></h2>
+            <p>Follow the chaos, share your memes, and help steer the show.</p>
             <div class="social-links">
-                <a href="https://t.me/YOUR_TELEGRAM_LINK" class="social-link">
-                    <span>📢</span> Telegram
-                </a>
-                
-                <a href="https://twitter.com/YOUR_TWITTER_LINK" class="social-link">
-                    <span>🐦</span> Twitter
-                </a>
-                
-                <a href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" class="social-link">
-                    <span>📊</span> DexScreener
-                </a>
-                
-                <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="social-link">
-                    <span>💸</span> Pump.fun
-                </a>
+                <a class="social-link" id="xLink" href="#" target="_blank" rel="noopener">🕊️ Follow on X</a>
+                <a class="social-link" id="tgLink" href="#" target="_blank" rel="noopener">💬 Join Telegram</a>
             </div>
         </div>
     </section>
-    
-    <!-- Footer -->
+
     <footer>
         <div class="footer-logo">SOL CLOWN</div>
-        <p>The Future of Memecoins on Solana</p>
-        
-        <div class="btn-container">
-            <a href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS_HERE" class="btn btn-primary">Buy $CLOWN Now</a>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2024 Sol Clown. All rights reserved. The future is funny.
-        </div>
+        <p>Built on Solana • Memes only • Laugh responsibly</p>
+        <p class="copyright">© <span id="yr"></span> Sol Clown</p>
     </footer>
-    
+
+    <!-- Scripts -->
     <script>
-        // Create floating particles
-        document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random properties
-                const size = Math.random() * 6 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const color = Math.random() > 0.5 ? 'var(--primary)' : 'var(--secondary)';
-                const opacity = Math.random() * 0.4 + 0.1;
-                const animationDuration = Math.random() * 20 + 10;
-                const animationDelay = Math.random() * 5;
-                
-                // Apply properties
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}vw`;
-                particle.style.top = `${posY}vh`;
-                particle.style.background = color;
-                particle.style.opacity = opacity;
-                particle.style.animationDuration = `${animationDuration}s`;
-                particle.style.animationDelay = `${animationDelay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Parallax effect for hero image
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const heroImage = document.querySelector('.hero-image');
-                
-                if (heroImage) {
-                    const rate = scrolled * -0.5;
-                    heroImage.style.transform = `perspective(1000px) rotateX(5deg) translateY(${rate}px)`;
-                }
-            });
-        });
+      // Year
+      document.getElementById('yr').textContent = new Date().getFullYear();
+
+      // Particles
+      (function () {
+        const wrap = document.getElementById('particles');
+        const N = 40;
+        for (let i = 0; i < N; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          p.style.width = p.style.height = (2 + Math.random() * 6) + 'px';
+          p.style.top = (Math.random() * 100) + 'vh';
+          p.style.left = (Math.random() * 100) + 'vw';
+          p.style.animationDuration = (10 + Math.random() * 18) + 's';
+          p.style.opacity = (0.15 + Math.random() * 0.35).toFixed(2);
+          wrap.appendChild(p);
+        }
+      })();
+
+      // External links (set your handles)
+      const X_URL = 'https://x.com/yourhandle';
+      const TG_URL = 'https://t.me/yourchannel';
+      document.getElementById('xLink').href = X_URL;
+      document.getElementById('tgLink').href = TG_URL;
+
+      // Copy contract address
+      document.getElementById('copyCA')?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(document.getElementById('ca').textContent.trim());
+          const b = document.getElementById('copyCA'); const t = b.textContent; b.textContent = 'Copied!';
+          setTimeout(()=> b.textContent = t, 1200);
+        } catch {}
+      });
     </script>
 </body>
 </html>
